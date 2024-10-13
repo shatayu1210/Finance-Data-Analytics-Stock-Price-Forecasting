@@ -1,2 +1,3 @@
-This ETL implementation makes use of the Alpha Vangtage API to extract, transform, and load the details of last 90 days stock prices to Snowflake.
-The pipeline for the same is scheduled to be triggered once every 4 hours.
+This project leverages the Alpha Vantage API to extract daily stock price data. The transformation step refines the API data, filtering it to include only the last 90 days of stock records. The cleaned data is then loaded into Snowflake for predictive modeling.
+
+Using Time Series Forecasting, stock prices for Apple and NVIDIA are predicted for the next 7 days. The forecasting model is trained on 90 days of historical data, including key parameters like date, open, high, low, close, volume, and symbol.
