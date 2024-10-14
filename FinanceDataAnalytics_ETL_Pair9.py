@@ -31,13 +31,14 @@ def initialize_target_table(table):
     # Define Query for Table Create or Replace by using table parameter passed to this function
     table_create = f"""
     CREATE OR REPLACE TABLE {table} (
-        date TIMESTAMP_NTZ,
-        open FLOAT,
-        high FLOAT,
-        low FLOAT,
-        close FLOAT,
-        volume INT,
-        symbol STRING
+        date TIMESTAMP_NTZ NOT NULL,
+        open FLOAT NOT NULL,
+        high FLOAT NOT NULL,
+        low FLOAT NOT NULL,
+        close FLOAT NOT NULL,
+        volume INT NOT NULL,
+        symbol STRING NOT NULL,
+        PRIMARY KEY (date, symbol)  -- Define composite primary key
     );
     """
     cursor.execute(table_create)  # Create a new table with required fields if not existing, else replace
