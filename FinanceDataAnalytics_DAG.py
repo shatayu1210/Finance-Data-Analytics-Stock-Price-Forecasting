@@ -235,7 +235,7 @@ with DAG(
     train_view = "dev.adhoc.stock_data_view"
     forecast_table = "dev.adhoc.stock_data_forecast"
     forecast_function_name = "dev.analytics.predict_stock_price"
-    final_table = "dev.analytics.stock_data"
+    final_table = "dev.analytics.final_stock_data"
 
     #Executing Training and Prediction for Apple, NVIDIA Stock Data
     cursor = return_snowflake_conn()
